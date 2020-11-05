@@ -149,10 +149,6 @@ module.exports = {
           title: 'Social',
           items: [
             {
-              label: 'Blog',
-              href: 'https://https://blogs.sap.com/'
-            },
-            {
               label: 'GitHub',
               href: 'https://github.com/SAP/cloud-sdk'
             }

@@ -23,14 +23,54 @@
   justify-content: center;
 }
 
-.features {
+.flavors {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 0.5rem 0;
   width: 100%;
 }
 
 .featureImage {
   height: 200px;
   width: 200px;
+}
+
+.whysdk {
+  font-weight: bold;
+  font-size: 3rem;
+  padding: 1.5rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.whysdkDark {
+    background-color: #20232a;
+    /* background-color: var(--ifm-color-primary-darkest); */
+  color: #fff;
+}
+
+.whysdkInner {
+  margin: 0 auto;
+  max-width: 768px;
+}
+
+.features {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.featureImg {
+  height: 15rem;
+  width: 15rem;
+  /* float: right; */
+}
+
+.featRight {
+  text-align: center;
+}
+
+.featLeft {
+    padding: 1rem 1rem;
 }
