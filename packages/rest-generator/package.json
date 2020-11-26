@@ -31,6 +31,7 @@
     "test:debug": "node --inspect-brk ../../node_modules/.bin/jest --runInBand",
     "test:watch-debug": "node --inspect-brk ../../node_modules/.bin/jest --watch --runInBand",
     "generate:test-services": "ts-node src/generator-cli.ts -i test/resources/test-apis -o test/test-services",
+    "generate:workflow": "ts-node src/generator-cli.ts -i test/resources/workflow -o src/generated",
     "check:dependencies": "depcheck . --ignore-bin-package=true"
   },
   "dependencies": {
