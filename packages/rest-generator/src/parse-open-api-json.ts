@@ -53,9 +53,7 @@ function toOpenApiOperation(obj, method: string): OpenApiOperation | undefined {
     const responseSchemaRefName = toResponseSchemaRefName(operation);
     return {
       method: SupportedOperation[method],
-      operationName: operation.operationId
-        ? operation.operationId
-        : operation.summary.replace(/\s/g, '').slice(0, 20),
+      operationName: operation.operationId,
       requestBodySchemaRefName,
       responseSchemaRefName
     };
