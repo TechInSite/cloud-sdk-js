@@ -5,6 +5,7 @@ import { resolve } from 'path';
 import { createLogger, errorWithCause } from '@sap-cloud-sdk/util';
 import execa = require('execa');
 import { OpenAPIV3 } from 'openapi-types';
+import { convert } from 'swagger2openapi';
 import { GeneratorOptions } from './options';
 import { apiFile, indexFile, createFile } from './wrapper-files';
 import { OpenApiDocument } from './openapi-types';
@@ -128,7 +129,9 @@ async function generateSpecWithGlobalTag(
   ouputFilePath: string
 ): Promise<void> {
   const openApiDocument = JSON.parse(fileContent);
-  const modifiedOpenApiDocument = createSpecWithGlobalTag(openApiDocument);
+  const modifiedOpenApiDocument = createSpecWithGlobalTag(
+    await convertDocToOpenApi3(openApiDocument)
+  );
   return writeFile(
     ouputFilePath,
     JSON.stringify(modifiedOpenApiDocument, null, 2)
@@ -156,4 +159,8 @@ export function createSpecWithGlobalTag(
   );
 
   return openApiDocument;
+}
+
+export async function convertDocToOpenApi3(doc: any) {
+  return (await convert(doc, {})).openapi;
 }
